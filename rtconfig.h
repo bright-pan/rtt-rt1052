@@ -117,9 +117,6 @@
 /* Utilities */
 
 
-/* RT-Thread Utestcases */
-
-
 /* RT-Thread online packages */
 
 /* IoT - internet of things */
@@ -143,6 +140,8 @@
 
 /* JSON: JavaScript Object Notation, a lightweight data-interchange format */
 
+#define PKG_USING_CJSON
+#define PKG_USING_CJSON_LATEST_VERSION
 
 /* XML: Extensible Markup Language */
 

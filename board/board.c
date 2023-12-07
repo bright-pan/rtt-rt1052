@@ -146,7 +146,7 @@ void BOARD_ConfigMPU(void)
     MPU->RASR = ARM_MPU_RASR(0, ARM_MPU_AP_FULL, 0, 0, 1, 1, 0, ARM_MPU_REGION_SIZE_256KB);
 
     /* Region 8 setting: Memory with Normal type, not shareable, outer/inner write back */
-	/*·ÃÎÊSEMCµÄÓ³ÉäµØÖ·0x80000000,²»ÔÊÐíÊý¾Ý»º´æ,Ã¿´Î·ÃÎÊÓ³ÉäµØÖ·,¶¼±ØÐëÓÐÊ±Ðò²úÉú*/
+	/*ï¿½ï¿½ï¿½ï¿½SEMCï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ö·0x80000000,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý»ï¿½ï¿½ï¿½,Ã¿ï¿½Î·ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ö·,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½*/
 //    MPU->RBAR = ARM_MPU_RBAR(8, 0x80000000U);
 //    MPU->RASR = ARM_MPU_RASR(0, ARM_MPU_AP_FULL, 0, 0, 1, 1, 0, ARM_MPU_REGION_SIZE_32MB);
 
@@ -207,7 +207,8 @@ void rt_hw_board_init()
 {
     BOARD_ConfigMPU();
     BOARD_InitPins();
-    BOARD_BootClockRUN();
+    BOARD_InitBootClocks();
+    BOARD_InitBootPeripherals();
 
     NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SysTick_Config(SystemCoreClock / RT_TICK_PER_SECOND);

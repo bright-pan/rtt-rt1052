@@ -52,7 +52,7 @@
           <OutputName>rtthread</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\build\keil\List\</ListingPath>
@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4096</DriverSelection>
+            <DriverSelection>4099</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -314,7 +314,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -340,7 +340,7 @@
               <MiscControls>-ffunction-sections -fno-common -fdata-sections -ffreestanding -fno-builtin -mthumb -Wno-invalid-source-encoding</MiscControls>
               <Define>XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, DEBUG, CPU_MIMXRT1052DVL6B, PRINTF_FLOAT_ENABLE=0, SCANF_FLOAT_ENABLE=0, PRINTF_ADVANCED_ENABLE=0, SCANF_ADVANCED_ENABLE=0, MCUXPRESSO_SDK, RT_USING_ARMLIBC, SKIP_SYSCLK_INIT, RT_USING_LIBC, __CLK_TCK=RT_TICK_PER_SECOND, FSL_SDK_ENABLE_DRIVER_CACHE_CONTROL=1, __RTTHREAD__, CPU_MIMXRT1052CVL5B, XIP_EXTERNAL_FLASH=1, EVK_MCIMXRM, XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_ENABLE=1, DEBUG, CPU_MIMXRT1052DVL6B, BSP_USING_HYPERFLASH</Define>
               <Undefine></Undefine>
-              <IncludePath>rt-thread\components\libc\posix\ipc;rt-thread\components\drivers\include;xxx\board\MCUX_Config;rt-thread\components\libc\posix\io\eventfd;rt-thread\libcpu\arm\common;libraries\MIMXRT1050\CMSIS\Include;rt-thread\components\drivers\include;.;board;rt-thread\components\libc\posix\io\epoll;rt-thread\components\libc\compilers\common\extension\fcntl\octal;rt-thread\components\libc\compilers\common\extension;rt-thread\components\finsh;rt-thread\components\libc\compilers\common\include;xxx\applications;libraries\MIMXRT1050\MIMXRT1052;libraries\MIMXRT1050\MIMXRT1052\drivers;board\ports;rt-thread\include;xxx\board;rt-thread\components\drivers\include;rt-thread\libcpu\arm\cortex-m7;rt-thread\components\libc\posix\io\poll;rt-thread\components\drivers\include;board\MCUX_Config;applications;xxx\board\ports;libraries\drivers;.\board\xip</IncludePath>
+              <IncludePath>rt-thread\components\libc\posix\ipc;rt-thread\components\libc\posix\io\eventfd;packages\cJSON-latest;rt-thread\libcpu\arm\common;libraries\MIMXRT1050\CMSIS\Include;rt-thread\components\drivers\include;.;board;rt-thread\components\libc\posix\io\epoll;rt-thread\components\libc\compilers\common\extension\fcntl\octal;rt-thread\components\libc\compilers\common\extension;rt-thread\components\finsh;rt-thread\components\libc\compilers\common\include;rt-thread\include;libraries\MIMXRT1050\MIMXRT1052;libraries\MIMXRT1050\MIMXRT1052\drivers;board\ports;rt-thread\components\drivers\include;rt-thread\components\drivers\include;rt-thread\libcpu\arm\cortex-m7;rt-thread\components\libc\posix\io\poll;rt-thread\components\drivers\include;board\MCUX_Config;applications;libraries\drivers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -389,6 +389,31 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>applications\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>com_comm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\com_comm.c</FilePath>
+            </File>
+            <File>
+              <FileName>com_fpga.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>applications\com_fpga.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>cJSON</GroupName>
+          <Files>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\cJSON-latest\cJSON.c</FilePath>
+            </File>
+            <File>
+              <FileName>cJSON_Utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>packages\cJSON-latest\cJSON_Utils.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -708,12 +733,12 @@
             <File>
               <FileName>evkbimxrt1050_flexspi_nor_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\libraries\xip\evkbimxrt1050_flexspi_nor_config.c</FilePath>
+              <FilePath>.\board\xip\evkbimxrt1050_flexspi_nor_config.c</FilePath>
             </File>
             <File>
               <FileName>fsl_flexspi_nor_boot.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\libraries\xip\fsl_flexspi_nor_boot.c</FilePath>
+              <FilePath>.\board\xip\fsl_flexspi_nor_boot.c</FilePath>
             </File>
           </Files>
         </Group>
